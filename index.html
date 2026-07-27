@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio0808 全能影音下載器 V20260727</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@500;700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #121316;
+            --bg-secondary: #1a1c23;
+            --card-bg: rgba(30, 32, 42, 0.75);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --card-hover-border: #00bfa5;
+            --primary-color: #00bfa5;
+            --primary-hover: #1de9b6;
+            --accent-pink: #ff2a75;
+            --accent-pink-hover: #ff4081;
+            --accent-purple: #9c27b0;
+            --text-main: #f0f2f5;
+            --text-muted: #9e9ea7;
+            --badge-bg: linear-gradient(135deg, #00bfa5 0%, #00897b 100%);
+            --v2026-badge: linear-gradient(135deg, #ff2a75 0%, #c2185b 100%);
+        }
+
+        body {
+            font-family: 'Noto Sans TC', 'Outfit', 'Inter', 'Microsoft JhengHei', sans-serif;
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(0, 191, 165, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 85% 60%, rgba(255, 42, 117, 0.10) 0%, transparent 40%);
+            background-attachment: fixed;
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 20px 24px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 45px 20px 30px 20px;
+            background: rgba(18, 19, 22, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--card-border);
+            position: relative;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 12px;
+        }
+
+        .app-badge {
+            background: var(--v2026-badge);
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 0.85em;
+            padding: 4px 12px;
+            border-radius: 20px;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 12px rgba(255, 42, 117, 0.35);
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-family: 'Outfit', 'Noto Sans TC', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            margin: 0;
+            background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 50%, var(--primary-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 1.15em;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+
+        /* Update Highlights Banner */
+        .whats-new-banner {
+            background: linear-gradient(135deg, rgba(255, 42, 117, 0.12) 0%, rgba(156, 39, 176, 0.12) 100%);
+            border: 1px solid rgba(255, 42, 117, 0.3);
+            border-radius: 16px;
+            padding: 20px 24px;
+            margin: 25px auto 10px auto;
+            max-width: 860px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(8px);
+        }
+
+        .whats-new-banner h3 {
+            margin: 0 0 12px 0;
+            color: var(--accent-pink);
+            font-size: 1.25em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .whats-new-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 12px;
+            text-align: left;
+        }
+
+        .whats-new-item {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 0.95em;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .whats-new-item strong {
+            color: #fff;
+        }
+
+        /* Buttons */
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--accent-pink) 0%, #c2185b 100%);
+            color: #fff;
+            padding: 14px 36px;
+            border-radius: 35px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 6px 20px rgba(255, 42, 117, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, var(--accent-pink-hover) 0%, #d81b60 100%);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 28px rgba(255, 42, 117, 0.55);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #00897b 0%, #004d40 100%);
+            box-shadow: 0 6px 20px rgba(0, 189, 165, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, #00bfa5 0%, #00695c 100%);
+            box-shadow: 0 10px 28px rgba(0, 189, 165, 0.45);
+        }
+
+        .release-info {
+            margin-top: 16px;
+            color: var(--text-muted);
+            font-size: 0.92em;
+            text-align: center;
+        }
+
+        .notice-tag {
+            color: #ffd54f;
+            font-weight: 600;
+            margin-top: 6px;
+            display: inline-block;
+        }
+
+        .hero-img-container {
+            text-align: center;
+            margin: 35px auto 10px auto;
+            max-width: 980px;
+            width: 100%;
+        }
+
+        .hero-img-container img {
+            width: 100%;
+            height: auto;
+            max-height: 720px;
+            border-radius: 16px;
+            border: 1px solid var(--card-border);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+            object-fit: contain;
+            transition: transform 0.4s ease;
+        }
+
+        .hero-img-container img:hover {
+            transform: scale(1.01);
+        }
+
+        /* Sections */
+        .section {
+            margin: 40px 0;
+        }
+
+        h2 {
+            border-left: 5px solid var(--primary-color);
+            padding-left: 16px;
+            font-size: 1.75em;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--text-main);
+            letter-spacing: 0.5px;
+        }
+
+        /* Grid for Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 22px;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 24px;
+            border-radius: 16px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border: 1px solid var(--card-border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card-new {
+            background: linear-gradient(145deg, rgba(30, 25, 55, 0.8) 0%, rgba(20, 18, 38, 0.8) 100%);
+            border: 1px solid rgba(156, 39, 176, 0.4);
+            box-shadow: 0 8px 24px rgba(156, 39, 176, 0.15);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--card-hover-border);
+            box-shadow: 0 12px 30px rgba(0, 191, 165, 0.2);
+        }
+
+        .feature-card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-card-new h3 {
+            color: #e1bee7;
+        }
+
+        .feature-card p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.98em;
+        }
+
+        /* Steps */
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 18px;
+            background-color: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 16px;
+            border: 1px solid var(--card-border);
+            transition: transform 0.2s ease;
+        }
+
+        .step:hover {
+            transform: translateX(4px);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .step-number {
+            background: var(--badge-bg);
+            color: #000;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.1em;
+            margin-right: 18px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0, 191, 165, 0.3);
+        }
+
+        .step-content h3 {
+            margin: 0 0 6px 0;
+            font-size: 1.15em;
+            color: #fff;
+        }
+
+        .step-content p {
+            margin: 0;
+            color: var(--text-muted);
+        }
+
+        /* FAQ */
+        .faq-item {
+            margin-bottom: 18px;
+            background-color: var(--card-bg);
+            backdrop-filter: blur(8px);
+            padding: 20px;
+            border-radius: 14px;
+            border: 1px solid var(--card-border);
+        }
+
+        .faq-question {
+            font-weight: 700;
+            font-size: 1.1em;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .faq-item p {
+            margin: 0;
+            color: #e0e0e0;
+            font-size: 0.98em;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--text-muted);
+            border-top: 1px solid var(--card-border);
+            margin-top: 40px;
+            font-size: 0.92em;
+        }
+
+        code {
+            background: rgba(0, 0, 0, 0.4);
+            color: #4ff8d2;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.92em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-area">
+            <h1>Studio0808 全能影音下載器</h1>
+            <span class="app-badge">V20260727 最新版</span>
+        </div>
+        <div class="subtitle">強大、純淨、免安裝的通用影音下載與格式轉換神器</div>
+
+        <!-- V20260727 What's New Highlight -->
+        <div class="whats-new-banner">
+            <h3>🔥 V20260727 最新版本升級重點 (Release Highlights)</h3>
+            <div class="whats-new-grid">
+                <div class="whats-new-item">
+                    ⚡ <strong>核心全預載 (Zero-Wait)</strong><br>內建預載 `yt-dlp`、`FFmpeg` 與 `Deno` 核心組件，新電腦開箱即用免線上等待！
+                </div>
+                <div class="whats-new-item">
+                    🎬 <strong>FB 影片解析重構</strong><br>修正 Facebook 等平台原先可能誤降級抓取純音訊 (534KB) 的漏洞，確保高畫質影音下載。
+                </div>
+                <div class="whats-new-item">
+                    🛡️ <strong>安全打包與自我修復</strong><br>升級多重工具路徑自動搜尋與備份防鎖定機制，打包防清空保護，運作更加穩定。
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-group">
+            <a href="https://drive.google.com/file/d/1L-fNpuskGBmhJ6MmXR4PFfzv_0JE8H2B/view?usp=sharing"
+                target="_blank" class="btn" id="download-btn">⬇️ 下載最新版本 (V20260727)</a>
+        </div>
+
+        <div class="release-info">
+            更新日期：2026.07.27<br>
+            <span class="notice-tag">⚠️ 若無法正常開啟 Google Drive 下載，請切換至「無痕視窗」開啟網頁</span>
+        </div>
+
+        <div class="hero-img-container">
+            <img src="download.png" alt="Studio0808 影音下載器介面截圖">
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="section">
+            <h2>✨ 核心功能 Features</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>🚀 極速下載與通用相容</h3>
+                    <p>支援 YouTube, Facebook, Instagram 等<strong>上百種主流影音平台</strong>，解壓縮即刻啟動，綠色無痕。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎵 智慧品質轉檔</h3>
+                    <p>內建 FFmpeg 核心，自動將影片精準轉換為高品質 MP3, MP4, MOV, WMV, MKV 等多元格式。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🛡️ 綠色免安裝 & 資安無毒</h3>
+                    <p>採用獨立資料夾封裝，純淨不寫入系統登錄檔。經 VirusTotal 國際資安檢測，保證無毒、安全、可靠。</p>
+                </div>
+                <div class="feature-card feature-card-new">
+                    <h3>📊 批量與播放清單下載</h3>
+                    <p>支援一次貼上多筆網址，並可自動解析 YouTube 播放清單供您彈性勾選批量下載。</p>
+                </div>
+                <div class="feature-card feature-card-new">
+                    <h3>✂️ 自動章節精準分割</h3>
+                    <p>依據影片內建章節或說明欄時間軸，自動將長影片精準切割成獨立章節檔案。</p>
+                </div>
+                <div class="feature-card feature-card-new">
+                    <h3>⏱️ 指定時間片段下載</h3>
+                    <p>支援自訂「開始時間」與「結束時間」，精準裁剪並僅下載您所需要的精華片段。</p>
+                </div>
+                <div class="feature-card feature-card-new">
+                    <h3>🔤 多語字幕附加下載</h3>
+                    <p>支援下載內建官方字幕或 AI 自動產生字幕 (SRT 格式)，自由選擇繁/簡/英/日等語言。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📖 使用教學 How to Use</h2>
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>解壓縮檔案 (重要步驟)</h3>
+                    <p>下載後請將 <code>Studio0808_Downloader</code> 資料夾完整解壓縮出來，<strong style="color: #ff5252;">請勿直接在 ZIP 壓縮檔內雙擊執行</strong>。</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>開啟主程式</h3>
+                    <p>進入解壓縮後的資料夾，雙擊 <code>Studio0808_Downloader_V20260603.exe</code> (或資料夾內 EXE) 即可啟動。</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>貼上網址一鍵下載</h3>
+                    <p>貼上影片網址，選擇您需要的畫質與格式，點擊「開始下載」即可自動開始處理。</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>讀取成品檔案</h3>
+                    <p>下載完成後，請至 <code>Outputs\Downloads</code> 資料夾取用檔案。程式亦提供「開啟輸出資料夾」按鈕可快速導覽。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>❓ 常見問題 FAQ</h2>
+            <div class="faq-item">
+                <div class="faq-question">Q: V20260727 版本在在新電腦打開還需要等待下載組件嗎？</div>
+                <p>A: 不需要！V20260727 最新版已完整預載核心三大組件（yt-dlp 下載組件、FFmpeg 轉檔引擎、Deno JS 執行環境），在新電腦上執行即可做到 0 秒開箱即用。若日後影音平台改版，點擊右下角「更新核心」即可完成自我更新。</p>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q: 為什麼下載 Facebook 影片時原先會出現只有聲音、沒有畫面的狀況？</div>
+                <p>A: 在 V20260727 版本中此問題已全面修正！過去因 FB 影片串流格式不含獨立 m4a 音軌導致程式誤墜純音訊備案，新版已重新撰寫多重影音格式解析邏輯，確保 Facebook、Instagram 等平台影片皆能下載完整的高畫質影音檔。</p>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q: 為什麼下載 1080p (及以上) 高畫質時，會看見顯示「合併/轉檔」的過程？</div>
+                <p>A: 這是現代影音平台的技術規範。1080p 以上高畫質影片在伺服器上是將「畫面」與「聲音」分軌儲存的。下載器會同時下載這兩個軌道並透過 FFmpeg 自動封裝為完整的 .mp4 檔案，進度達 100% 後請稍微等待數秒封裝即可。</p>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q: 下載的字幕檔 (.srt) 要如何搭配影片觀看？</div>
+                <p>A: 將影片檔與字幕檔放在同一個資料夾，並確保「檔案名稱完全相同」（如 <code>影片.mp4</code> 與 <code>影片.srt</code>），點開影片時萬能播放器（如 PotPlayer、VLC）就會自動載入；亦可直接將 `.srt` 檔案拖曳進播放視窗手動加載。</p>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q: 為什麼 Threads 影片無法直接在程式內下載，會開啟瀏覽器？</div>
+                <p>A: 因為 Meta (Threads/Instagram) 有嚴格的私有帳號驗證。為保護您的帳號資安，程式會自動將網址「複製到剪貼簿」並開啟輔助下載網站，只需在網站貼上 (Ctrl+V) 即可輕鬆下載，這是最安全穩定的折衷做法。</p>
+            </div>
+        </div>
+
+        <div class="section" style="border-left: 5px solid #ff5252; background-color: rgba(255, 82, 82, 0.08); padding: 20px; border-radius: 12px; margin-bottom: 20px; border: 1px solid rgba(255, 82, 82, 0.2);">
+            <h2 style="border: none; padding: 0; margin-bottom: 12px; color: #ff5252; font-size: 1.3em;">⚠️ 免責聲明與版權提醒 (Disclaimer)</h2>
+            <div style="color: #e0e0e0; font-size: 0.95em;">
+                <p><strong>1. 僅供個人使用：</strong>本軟體 (Studio0808) 僅供技術研究、個人學習或資料備份使用，嚴禁用於任何商業用途。</p>
+                <p><strong>2. 尊重著作權：</strong>使用者下載影音內容時，應務必遵守各影音平台服務條款及著作權法規。請勿重製、散布或公開播放未授權之內容。</p>
+                <p><strong>3. 使用者責任：</strong>使用者應自行承擔使用本軟體下載檔案所衍生之所有法律責任，開發者對於任何違法行為概不負責。</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Studio0808. All rights reserved. | Designed by begin0808 using Antigravity</p>
+    </footer>
+
+</body>
+
+</html>

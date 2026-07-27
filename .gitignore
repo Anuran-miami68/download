@@ -1,0 +1,43 @@
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# PyInstaller Build & Dist Outputs
+build/
+dist/
+*.spec
+# Old version scripts
+Studio0808_Downloader_V2.0.py
+Studio0808_Downloader_V3.0.py
+* - 複製.py
+threads_debug.py
+
+# Large binaries in tools (yt-dlp, ffmpeg, deno - should be auto-downloaded or packaged via build.py)
+tools/*.exe
+tools/*.zip
+tools/*.tar.gz
+tools/threads_config.json
+
+# Media & Temp Outputs
+Outputs/
+*.part
+*.mkv
+*.mp4
+*.mp3
+*.wav
+*.wmv
+*.mov
+*.srt
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
