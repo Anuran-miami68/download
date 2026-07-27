@@ -2,7 +2,7 @@
 
 ![Studio0808 Downloader](download.png)
 
-[![Release](https://img.shields.io/badge/Release-V20260727-ff2a75.svg)](https://github.com/begin0808/download)
+[![Release](https://img.shields.io/badge/Release-V20260727-ff9800.svg)](https://github.com/begin0808/download)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
@@ -15,7 +15,7 @@
 ## 🔥 V20260727 最新版本更新重點
 
 - ⚡ **核心全預載 (Zero-Wait)**：預載 `yt-dlp`、`FFmpeg` 與 `Deno` 核心組件，在新電腦開箱即用、0 秒免等待下載。
-- 🎬 **Facebook / IG 影音解析重構**：修復 Facebook 影片原先可能誤降級抓取純音訊 (534KB) 的問題，確保影音高畫質完整下載。
+- 🎬 **Facebook / IG 影音解析重構**：修復 Facebook 影片原先可能誤降級抓取純音訊的問題，確保影音高畫質完整下載。
 - 🛡️ **安全打包與非破壞性同步**：升級 PyInstaller 獨立暫存區打包機制，編譯時保護既有 zip 與歷史輸出紀錄。
 
 ---
