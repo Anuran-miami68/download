@@ -8,6 +8,8 @@
 
 **Studio0808 全能影音下載器** 是一款基於 CustomTkinter UI、yt-dlp、FFmpeg 與 Deno JS 引擎開發的綠色免安裝影音下載與轉檔軟體。支援 YouTube、Facebook、Instagram、TikTok、Vimeo 等上百種主流影音平台。
 
+### 🚀 [點我立即下載 Studio0808 全能影音下載器 V20260727 免安裝完整版 (ZIP 222MB)](https://github.com/begin0808/download/releases/download/v20260727/Studio0808_Downloader_V20260727.zip)
+
 ---
 
 ## 🔥 V20260727 最新版本更新重點
