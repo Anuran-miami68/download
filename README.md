@@ -1,4 +1,4 @@
-# Studio0808 全能影音下載器 (Universal Video Downloader)
+# Studio0808 全能影音下載器
 
 ![Studio0808 Downloader](download.png)
 
@@ -38,7 +38,7 @@ pip install -r requirements.txt
 
 ### 執行主程式
 ```bash
-python Studio0808_Downloader_V20260603.py
+python Studio0808_Downloader_V20260727.py
 ```
 
 ### 獨立打包 EXE

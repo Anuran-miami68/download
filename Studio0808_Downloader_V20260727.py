@@ -48,7 +48,6 @@ def setup_ffmpeg():
 setup_ffmpeg()
 
 # Import DownloadView
-# Make sure to run this script from its directory or add it to PYTHONPATH
 script_dir = os.path.dirname(os.path.abspath(__file__))
 if script_dir not in sys.path:
     sys.path.insert(0, script_dir)
@@ -71,7 +70,7 @@ class App(ctk.CTk):
         super().__init__()
 
         # Configure window
-        self.title("Studio0808 影音下載器 V20260603")
+        self.title("Studio0808 影音下載器 V20260727")
         self.geometry(f"{1100}x{750}")
         self.minsize(900, 650)
         

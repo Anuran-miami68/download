@@ -7,7 +7,9 @@
     <title>Studio0808 全能影音下載器 V20260727</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@500;700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@500;700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --bg-color: #121316;
@@ -29,7 +31,7 @@
         body {
             font-family: 'Noto Sans TC', 'Outfit', 'Inter', 'Microsoft JhengHei', sans-serif;
             background-color: var(--bg-color);
-            background-image: 
+            background-image:
                 radial-gradient(circle at 15% 20%, rgba(0, 191, 165, 0.12) 0%, transparent 40%),
                 radial-gradient(circle at 85% 60%, rgba(255, 42, 117, 0.10) 0%, transparent 40%);
             background-attachment: fixed;
@@ -393,8 +395,8 @@
         </div>
 
         <div class="btn-group">
-            <a href="https://drive.google.com/file/d/1L-fNpuskGBmhJ6MmXR4PFfzv_0JE8H2B/view?usp=sharing"
-                target="_blank" class="btn" id="download-btn">⬇️ 下載最新版本 (V20260727)</a>
+            <a href="https://drive.google.com/file/d/1L-fNpuskGBmhJ6MmXR4PFfzv_0JE8H2B/view?usp=sharing" target="_blank"
+                class="btn" id="download-btn">⬇️ 下載最新版本 (V20260727)</a>
         </div>
 
         <div class="release-info">
@@ -449,7 +451,8 @@
                 <div class="step-number">1</div>
                 <div class="step-content">
                     <h3>解壓縮檔案 (重要步驟)</h3>
-                    <p>下載後請將 <code>Studio0808_Downloader</code> 資料夾完整解壓縮出來，<strong style="color: #ff5252;">請勿直接在 ZIP 壓縮檔內雙擊執行</strong>。</p>
+                    <p>下載後請將 <code>Studio0808_Downloader</code> 資料夾完整解壓縮出來，<strong style="color: #ff5252;">請勿直接在 ZIP
+                            壓縮檔內雙擊執行</strong>。</p>
                 </div>
             </div>
             <div class="step">
@@ -479,28 +482,35 @@
             <h2>❓ 常見問題 FAQ</h2>
             <div class="faq-item">
                 <div class="faq-question">Q: V20260727 版本在在新電腦打開還需要等待下載組件嗎？</div>
-                <p>A: 不需要！V20260727 最新版已完整預載核心三大組件（yt-dlp 下載組件、FFmpeg 轉檔引擎、Deno JS 執行環境），在新電腦上執行即可做到 0 秒開箱即用。若日後影音平台改版，點擊右下角「更新核心」即可完成自我更新。</p>
+                <p>A: 不需要！V20260727 最新版已完整預載核心三大組件（yt-dlp 下載組件、FFmpeg 轉檔引擎、Deno JS 執行環境），在新電腦上執行即可做到 0
+                    秒開箱即用。若日後影音平台改版，點擊右下角「更新核心」即可完成自我更新。</p>
             </div>
             <div class="faq-item">
                 <div class="faq-question">Q: 為什麼下載 Facebook 影片時原先會出現只有聲音、沒有畫面的狀況？</div>
-                <p>A: 在 V20260727 版本中此問題已全面修正！過去因 FB 影片串流格式不含獨立 m4a 音軌導致程式誤墜純音訊備案，新版已重新撰寫多重影音格式解析邏輯，確保 Facebook、Instagram 等平台影片皆能下載完整的高畫質影音檔。</p>
+                <p>A: 在 V20260727 版本中此問題已全面修正！過去因 FB 影片串流格式不含獨立 m4a 音軌導致程式誤墜純音訊備案，新版已重新撰寫多重影音格式解析邏輯，確保
+                    Facebook、Instagram 等平台影片皆能下載完整的高畫質影音檔。</p>
             </div>
             <div class="faq-item">
                 <div class="faq-question">Q: 為什麼下載 1080p (及以上) 高畫質時，會看見顯示「合併/轉檔」的過程？</div>
-                <p>A: 這是現代影音平台的技術規範。1080p 以上高畫質影片在伺服器上是將「畫面」與「聲音」分軌儲存的。下載器會同時下載這兩個軌道並透過 FFmpeg 自動封裝為完整的 .mp4 檔案，進度達 100% 後請稍微等待數秒封裝即可。</p>
+                <p>A: 這是現代影音平台的技術規範。1080p 以上高畫質影片在伺服器上是將「畫面」與「聲音」分軌儲存的。下載器會同時下載這兩個軌道並透過 FFmpeg 自動封裝為完整的 .mp4 檔案，進度達 100%
+                    後請稍微等待數秒封裝即可。</p>
             </div>
             <div class="faq-item">
                 <div class="faq-question">Q: 下載的字幕檔 (.srt) 要如何搭配影片觀看？</div>
-                <p>A: 將影片檔與字幕檔放在同一個資料夾，並確保「檔案名稱完全相同」（如 <code>影片.mp4</code> 與 <code>影片.srt</code>），點開影片時萬能播放器（如 PotPlayer、VLC）就會自動載入；亦可直接將 `.srt` 檔案拖曳進播放視窗手動加載。</p>
+                <p>A: 將影片檔與字幕檔放在同一個資料夾，並確保「檔案名稱完全相同」（如 <code>影片.mp4</code> 與 <code>影片.srt</code>），點開影片時萬能播放器（如
+                    PotPlayer、VLC）就會自動載入；亦可直接將 `.srt` 檔案拖曳進播放視窗手動加載。</p>
             </div>
             <div class="faq-item">
                 <div class="faq-question">Q: 為什麼 Threads 影片無法直接在程式內下載，會開啟瀏覽器？</div>
-                <p>A: 因為 Meta (Threads/Instagram) 有嚴格的私有帳號驗證。為保護您的帳號資安，程式會自動將網址「複製到剪貼簿」並開啟輔助下載網站，只需在網站貼上 (Ctrl+V) 即可輕鬆下載，這是最安全穩定的折衷做法。</p>
+                <p>A: 因為 Meta (Threads/Instagram) 有嚴格的私有帳號驗證。為保護您的帳號資安，程式會自動將網址「複製到剪貼簿」並開啟輔助下載網站，只需在網站貼上 (Ctrl+V)
+                    即可輕鬆下載，這是最安全穩定的折衷做法。</p>
             </div>
         </div>
 
-        <div class="section" style="border-left: 5px solid #ff5252; background-color: rgba(255, 82, 82, 0.08); padding: 20px; border-radius: 12px; margin-bottom: 20px; border: 1px solid rgba(255, 82, 82, 0.2);">
-            <h2 style="border: none; padding: 0; margin-bottom: 12px; color: #ff5252; font-size: 1.3em;">⚠️ 免責聲明與版權提醒 (Disclaimer)</h2>
+        <div class="section"
+            style="border-left: 5px solid #ff5252; background-color: rgba(255, 82, 82, 0.08); padding: 20px; border-radius: 12px; margin-bottom: 20px; border: 1px solid rgba(255, 82, 82, 0.2);">
+            <h2 style="border: none; padding: 0; margin-bottom: 12px; color: #ff5252; font-size: 1.3em;">⚠️ 免責聲明與版權提醒
+                (Disclaimer)</h2>
             <div style="color: #e0e0e0; font-size: 0.95em;">
                 <p><strong>1. 僅供個人使用：</strong>本軟體 (Studio0808) 僅供技術研究、個人學習或資料備份使用，嚴禁用於任何商業用途。</p>
                 <p><strong>2. 尊重著作權：</strong>使用者下載影音內容時，應務必遵守各影音平台服務條款及著作權法規。請勿重製、散布或公開播放未授權之內容。</p>
